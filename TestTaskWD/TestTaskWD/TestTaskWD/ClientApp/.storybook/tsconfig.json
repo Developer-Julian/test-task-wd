@@ -1,0 +1,19 @@
+{
+  "extends": "../tsconfig.app.json",
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["node"]
+  },
+  "target": "es2015",
+  "lib": ["es2018", "dom"],
+  "exclude": [
+    "../src/test.ts",
+    "../src/**/*.spec.ts",
+    "../projects/**/*.spec.ts"
+  ],
+  "include": ["../src/**/*", "../projects/**/*"],
+  "files": ["./typings.d.ts"]
+}

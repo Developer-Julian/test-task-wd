@@ -1,0 +1,87 @@
+<div><a mat-button color="primary" routerLink="../../">Return to home</a></div>
+<div class="mat-elevation-z8 w60 mt16">
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    matSort
+    (matSortChange)="sortChange($event)"
+    class="w100"
+  >
+    <ng-container matColumnDef="shortUrl">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by short url"
+      >
+        Short Url
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <a
+          target="_blank"
+          [href]="element.shortUrl"
+          (click)="clickByUrl(element.urlHash)"
+          >{{ element.shortUrl }}</a
+        >
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fullUrl">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by full url"
+      >
+        Full Url
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <a
+          target="_blank"
+          [href]="element.fullUrl"
+          (click)="clickByUrl(element.urlHash)"
+          >{{ element.fullUrl }}</a
+        >
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="urlClickCount">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        sortActionDescription="Sort by clicking"
+      >
+        Click Count
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.urlClickCount }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <button
+          mat-stroked-button
+          color="warn"
+          class="ml40"
+          (click)="deleteUrl(element.urlHash)"
+        >
+          Delete
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator
+    [length]="length"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="[5, 10, 20]"
+    (page)="changePaginator($event)"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements"
+  >
+  </mat-paginator>
+</div>

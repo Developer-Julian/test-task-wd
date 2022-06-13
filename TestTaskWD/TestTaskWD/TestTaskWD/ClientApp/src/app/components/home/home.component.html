@@ -1,0 +1,54 @@
+<div class="form-shorter-url">
+  <div class="show-block">
+    <form [formGroup]="shortenLinkForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Shorten your link</mat-label>
+        <input matInput formControlName="shortenLink" />
+      </mat-form-field>
+      <button
+        class="ml16"
+        mat-raised-button
+        color="primary"
+        (click)="shortUrl()"
+      >
+        Shorten
+      </button>
+    </form>
+  </div>
+  <div class="error-block" *ngIf="showErrorBlock$ | async">
+    Unable to shorten that link. It is not a valid url.
+  </div>
+  <div
+    class="mt16 show-block flex-d-column"
+    *ngIf="shortenUrls && shortenUrls.length > 0"
+  >
+    <div *ngFor="let shortenUrl of shortenUrls">
+      <div class="self-url-block">
+        <span
+          [matBadge]="shortenUrl.urlClickCount"
+          matBadgeOverlap="false"
+          matBadgePosition="after"
+          ><a
+            target="_blank"
+            [href]="shortenUrl.fullUrl"
+            (click)="clickByUrl(shortenUrl.urlHash)"
+            >{{ shortenUrl.shortUrl }}</a
+          ></span
+        >
+        <button
+          mat-stroked-button
+          color="warn"
+          class="ml40"
+          (click)="deleteUrl(shortenUrl.urlHash)"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    <div class="mt16 flex-center">
+      <a mat-button color="primary" routerLink="/link-table"
+        >Show all shorten urls</a
+      >
+    </div>
+  </div>
+</div>
