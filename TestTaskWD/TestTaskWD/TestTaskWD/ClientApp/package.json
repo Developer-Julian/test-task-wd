@@ -11,11 +11,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
-    "storybook": "npm run docs:json && start-storybook -p 6006",
+    "storybook": "npm run docs:json && start-storybook -p 6006 -s src",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
     "prebuild:storybook": "npm run test:generate-output",
     "build-storybook": "npm run docs:json && build-storybook -c .storybook -o build/",
-    "chromatic": "npx chromatic --project-token=2f5f5b7a2c11"
+    "chromatic": "npx chromatic --project-token=???????"
   },
   "private": true,
   "dependencies": {

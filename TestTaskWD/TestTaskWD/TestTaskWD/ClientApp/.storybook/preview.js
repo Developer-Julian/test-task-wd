@@ -3,11 +3,12 @@ import docJson from "../documentation.json";
 import { addDecorator } from "@storybook/angular";
 import { initialize, mswDecorator } from "msw-storybook-addon";
 import { withTests } from "@storybook/addon-jest";
-import results from "../.jest-test-results.json";
+// import results from "../.jest-test-results.json";
 
 export const decorators = [
+  mswDecorator,
   withTests({
-    results,
+    // results,
     filesExt: "((\\.specs?)|(\\.tests?))?(\\.ts)?$",
   }),
 ];

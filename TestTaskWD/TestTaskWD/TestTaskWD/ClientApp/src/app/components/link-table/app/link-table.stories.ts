@@ -1,22 +1,22 @@
-import { of } from 'rxjs';
-import { ShortenUrlModel } from './../../models/shorten-url.model';
-import { ShortUrlGrid } from './../../interfaces/short-url-grid.interface';
-import { AppModule } from './../../app.module';
+import { ShortUrlGrid } from './../../../interfaces/short-url-grid.interface';
+import { LinkTableModule } from './../link-table.module';
+import { LinkTableComponent } from './link-table.component';
+
+import { ShortenUrlModel } from './../../../models/shorten-url.model';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { rest } from 'msw';
-import { HomeComponent } from './home.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 export default {
-  component: HomeComponent,
+  component: LinkTableComponent,
   decorators: [
     moduleMetadata({
-      imports: [AppModule],
+      imports: [LinkTableModule, RouterTestingModule],
     }),
   ],
   excludeStories: /.*Data$/,
-  title: 'UrlShortener',
+  title: 'UrlShortenerTable',
 } as Meta;
-
 const mockUrlData = [
   {
     fullUrl: 'https://example.com/adst/sa/sdss/d3222/ssfa',
@@ -47,6 +47,36 @@ const mockUrlData = [
     shortUrl: 'https://twd.com/esfez43rfsfds',
     urlClickCount: 5,
     urlHash: 'esfez43rfsfds',
+  } as ShortenUrlModel,
+  {
+    fullUrl: 'https://example.com/adst/sa/sdss/d3222/s4sfa',
+    shortUrl: 'https://twd.com/esfec43rfsfds',
+    urlClickCount: 0,
+    urlHash: 'esfec43rfsfds',
+  } as ShortenUrlModel,
+  {
+    fullUrl: 'https://example.com/adst/sa/sdss/d3222/ss2fa',
+    shortUrl: 'https://twd.com/esfed44rfsfds',
+    urlClickCount: 0,
+    urlHash: 'esfed44rfsfds',
+  } as ShortenUrlModel,
+  {
+    fullUrl: 'https://example.com/adst/sa/sdss/d3222/s5sfa',
+    shortUrl: 'https://twd.com/esfef46yfsfds',
+    urlClickCount: 0,
+    urlHash: 'esfef46yfsfds',
+  } as ShortenUrlModel,
+  {
+    fullUrl: 'https://example.com/adst/sa/sdss/d3222/ss7fa',
+    shortUrl: 'https://twd.com/esfeh468fsfds',
+    urlClickCount: 0,
+    urlHash: 'esfeh468fsfds',
+  } as ShortenUrlModel,
+  {
+    fullUrl: 'https://example.com/adst/sa/sdss/d3222/ss8fa',
+    shortUrl: 'https://twd.com/esfe44hgjsfds',
+    urlClickCount: 0,
+    urlHash: 'esfe44hgjsfds',
   } as ShortenUrlModel,
 ];
 
@@ -80,64 +110,25 @@ const mocks = [
     return res(ctx.json(result));
   }),
   rest.get(`${apiBase}`, (req, res, ctx) => {
-    return res(ctx.json({ total: 0, shortenUrls: [] } as ShortUrlGrid));
+    return res(
+      ctx.json({ total: 10, shortenUrls: mockUrlData } as ShortUrlGrid)
+    );
   }),
 ];
 
-const templateUrlShortener: Story<HomeComponent> = (args: any) => ({
+const templateUrlShortener: Story<LinkTableComponent> = (args: any) => ({
   props: {
     ...args,
   },
   moduleMetadata: {},
 });
 
-const templateUrlShortenerError: Story<HomeComponent> = (args: any) => ({
-  props: {
-    ...args,
-    showErrorBlock$: of(true),
-  },
-  moduleMetadata: {},
-});
-
-export const basic: Story<HomeComponent> = templateUrlShortener.bind({});
+export const basic: Story<LinkTableComponent> = templateUrlShortener.bind({});
 basic.args = {};
 basic.parameters = {
   controls: {
     include: [],
   },
   msw: mocks,
-  jest: ['home.component'],
-};
-
-export const basicWith: Story<HomeComponent> = templateUrlShortener.bind({});
-const mockWithData = mocks.filter(
-  (x) => x.info.path !== `${apiBase}` && x.info.method.toLowerCase() !== 'get'
-);
-mockWithData.push(
-  rest.get(`${apiBase}`, (req, res, ctx) => {
-    return res(
-      ctx.json({ total: 5, shortenUrls: mockUrlData } as ShortUrlGrid)
-    );
-  })
-);
-basicWith.args = {};
-basicWith.parameters = {
-  controls: {
-    include: [],
-  },
-  msw: mockWithData,
-  jest: ['home.component'],
-};
-
-export const errorUrl: Story<HomeComponent> = templateUrlShortenerError.bind(
-  {}
-);
-errorUrl.args = {};
-errorUrl.argTypes = {};
-errorUrl.parameters = {
-  controls: {
-    include: [],
-  },
-  msw: mocks,
-  jest: ['home.component'],
+  jest: ['link-table.component'],
 };

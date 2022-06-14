@@ -15,11 +15,15 @@ import { HttpProxyInterceptorService } from './services/http-proxy-interseptor.s
 import { AppRoutingModule } from './app-routing.module';
 import { TranslocoRootModule } from './transloco-root.module';
 import { MaterialModule } from './material.module';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    CommonModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
@@ -41,5 +45,6 @@ import { MaterialModule } from './material.module';
     },
   ],
   bootstrap: [AppComponent],
+  exports: [AppComponent, HomeComponent],
 })
 export class AppModule {}

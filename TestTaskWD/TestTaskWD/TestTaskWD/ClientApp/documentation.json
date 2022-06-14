@@ -1,0 +1,2432 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "ShortUrlGrid",
+            "id": "interface-ShortUrlGrid-3c7b1153d1a2c018b34c3f859cb26e759709af4ca3009937fd55fa193c6585f494b24d6c45d78ea7561f69f844db9baf4e73770874d5e6af7f0bff95ef9d5995",
+            "file": "src/app/interfaces/short-url-grid.interface.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { ShortenUrlModel } from './../models/shorten-url.model';\r\nexport interface ShortUrlGrid {\r\n  total: number;\r\n  shortenUrls: ShortenUrlModel[];\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "shortenUrls",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ShortenUrlModel[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "total",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "HttpProxyShortenUrlService",
+            "id": "injectable-HttpProxyShortenUrlService-8f5de4f59b11c307cb4116be3e6aabc75ef8b0faf03dc0be12771dd08dc7d49f1aebf5d124469cb9513e7ba4f3a777748bb88ad39f4ab39465ae876e0793c9fb",
+            "file": "src/app/services/http-proxy-shorten-url.service.ts",
+            "properties": [
+                {
+                    "name": "apiBase",
+                    "defaultValue": "'/short-url/short'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8,
+                    "modifierKind": [
+                        121,
+                        144
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "addBatchOfLinks",
+                    "args": [
+                        {
+                            "name": "urls",
+                            "type": "string[]",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<ShortUrlGrid>",
+                    "typeParameters": [],
+                    "line": 11,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "urls",
+                            "type": "string[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "clickLink",
+                    "args": [
+                        {
+                            "name": "urlHash",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<number>",
+                    "typeParameters": [],
+                    "line": 37,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "urlHash",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteLink",
+                    "args": [
+                        {
+                            "name": "urlHash",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<void>",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "urlHash",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getUserLinks",
+                    "args": [
+                        {
+                            "name": "filterText",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "sort",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "sortDirection",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "skip",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "take",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<ShortUrlGrid>",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "filterText",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "sort",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "sortDirection",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "skip",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "take",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\r\nimport { Injectable } from '@angular/core';\r\nimport { Observable } from 'rxjs';\r\nimport { ShortUrlGrid } from '../interfaces/short-url-grid.interface';\r\n\r\n@Injectable()\r\nexport class HttpProxyShortenUrlService {\r\n  private readonly apiBase: string = '/short-url/short';\r\n  constructor(private http: HttpClient) {}\r\n\r\n  public addBatchOfLinks(urls: string[]): Observable<ShortUrlGrid> {\r\n    return this.http.post<ShortUrlGrid>(`${this.apiBase}`, {\r\n      fullUrls: urls.map((x) => {\r\n        return {\r\n          url: x,\r\n        };\r\n      }),\r\n    });\r\n  }\r\n\r\n  public getUserLinks(\r\n    filterText: string,\r\n    sort: string,\r\n    sortDirection: string,\r\n    skip: number,\r\n    take: number\r\n  ): Observable<ShortUrlGrid> {\r\n    return this.http.get<ShortUrlGrid>(\r\n      `${this.apiBase}?filterText=${filterText}&sort=${sort}&sortDirection=${sortDirection}&skip=${skip}&take=${take}`\r\n    );\r\n  }\r\n\r\n  public deleteLink(urlHash: string): Observable<void> {\r\n    return this.http.delete<void>(`${this.apiBase}/${urlHash}`);\r\n  }\r\n\r\n  public clickLink(urlHash: string): Observable<number> {\r\n    return this.http.put<number>(`${this.apiBase}/${urlHash}`, {});\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 8,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        },
+        {
+            "name": "TranslocoHttpLoader",
+            "id": "injectable-TranslocoHttpLoader-d3d112cccfda268069f30675c12e300873ff700a9ad6b11237c291eb5e58156cf9867cd7829d5146d33240074651e7e1cfb36e28a720d8f86ce35524655f2d92",
+            "file": "src/app/transloco-root.module.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getTranslation",
+                    "args": [
+                        {
+                            "name": "lang",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "lang",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\r\nimport {\r\n  TRANSLOCO_LOADER,\r\n  Translation,\r\n  TranslocoLoader,\r\n  TRANSLOCO_CONFIG,\r\n  translocoConfig,\r\n  TranslocoModule,\r\n  HashMap,\r\n} from '@ngneat/transloco';\r\nimport { Injectable, NgModule } from '@angular/core';\r\nimport { environment } from '../environments/environment';\r\nimport { forkJoin, Observable, Subscriber } from 'rxjs';\r\nimport { map } from 'rxjs/operators';\r\n\r\nconst localizationUrl = '/ControlPanel/GetLocalization';\r\nconst LOCALIZATION_FILE_PATH = ['ControlPanel/ControlPanel'];\r\n\r\n@Injectable({ providedIn: 'root' })\r\nexport class TranslocoHttpLoader implements TranslocoLoader {\r\n  constructor(private http: HttpClient) {}\r\n\r\n  getTranslation(lang: string) {\r\n    const loadObservables = LOCALIZATION_FILE_PATH.map((item: string) =>\r\n      getFileLoader(this.http, localizationUrl, `${item}.`)\r\n    );\r\n\r\n    const result = forkJoin(loadObservables).pipe(\r\n      map((results: HashMap<any>[]) => {\r\n        return results.reduce((accumulator, currentValue) => {\r\n          return merge([accumulator, currentValue]);\r\n        }, {});\r\n      })\r\n    );\r\n\r\n    return result;\r\n  }\r\n}\r\n\r\n@NgModule({\r\n  exports: [TranslocoModule],\r\n  providers: [\r\n    {\r\n      provide: TRANSLOCO_CONFIG,\r\n      useValue: translocoConfig({\r\n        availableLangs: [\r\n          'en',\r\n          'de',\r\n          'en-AU',\r\n          'en-GB',\r\n          'fr-CA',\r\n          'it',\r\n          'ja',\r\n          'nl',\r\n        ],\r\n        defaultLang: 'en',\r\n        reRenderOnLangChange: true,\r\n        prodMode: environment.production,\r\n      }),\r\n    },\r\n    { provide: TRANSLOCO_LOADER, useClass: TranslocoHttpLoader },\r\n  ],\r\n})\r\nexport class TranslocoRootModule {}\r\n\r\nfunction getFileLoader(\r\n  http: HttpClient,\r\n  url: string,\r\n  resourcePath: string\r\n): Observable<Translation> {\r\n  return new Observable<Translation>((observer: Subscriber<HashMap<any>>) => {\r\n    http.post<Translation>(url, { resourcePath }).subscribe(\r\n      (data: HashMap<any>) => {\r\n        observer.next(data);\r\n        observer.complete();\r\n      },\r\n      () => {\r\n        observer.next({});\r\n        observer.complete();\r\n      }\r\n    );\r\n  });\r\n}\r\n\r\nfunction merge(objects: any[]): any {\r\n  const target = {} as any;\r\n  // Merge the object into the target object\r\n  const merger = (obj: any) => {\r\n    for (const prop in obj) {\r\n      if (obj.hasOwnProperty(prop)) {\r\n        if (Object.prototype.toString.call(obj[prop]) === '[object Object]') {\r\n          // If we're doing a deep merge\r\n          // and the property is an object\r\n          target[prop] = merge([target[prop], obj[prop]]);\r\n        } else {\r\n          // Otherwise, do a regular merge\r\n          target[prop] = obj[prop];\r\n        }\r\n      }\r\n    }\r\n  };\r\n\r\n  // tslint:disable-next-line: prefer-for-of\r\n  for (let i = 0; i < objects.length; i++) {\r\n    merger(objects[i]);\r\n  }\r\n\r\n  return target;\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 20,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        }
+    ],
+    "guards": [],
+    "interceptors": [
+        {
+            "name": "HttpProxyInterceptorService",
+            "id": "injectable-HttpProxyInterceptorService-12a656737084c87a5d8c44fe26ac37f240c988828c7f200e1bf92e9b27cfad9a2acfd36fda4ff493913ca73475849eae2f6fca4777b7a4c8f4ebfde8968c011e",
+            "file": "src/app/services/http-proxy-interseptor.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "intercept",
+                    "args": [
+                        {
+                            "name": "req",
+                            "type": "HttpRequest<any>",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "next",
+                            "type": "HttpHandler",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<HttpEvent<any>>",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "req",
+                            "type": "HttpRequest<any>",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "next",
+                            "type": "HttpHandler",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import {\r\n  HttpErrorResponse,\r\n  HttpEvent,\r\n  HttpHandler,\r\n  HttpInterceptor,\r\n  HttpRequest,\r\n  HttpResponse,\r\n} from '@angular/common/http';\r\nimport { Injectable } from '@angular/core';\r\nimport { Router } from '@angular/router';\r\nimport { Observable } from 'rxjs';\r\nimport { tap } from 'rxjs/operators';\r\n\r\n@Injectable({ providedIn: 'root' })\r\nexport class HttpProxyInterceptorService implements HttpInterceptor {\r\n  constructor(private router: Router) {}\r\n\r\n  public intercept(\r\n    req: HttpRequest<any>,\r\n    next: HttpHandler\r\n  ): Observable<HttpEvent<any>> {\r\n    return next.handle(req).pipe(\r\n      tap(\r\n        (event: HttpEvent<any>) => {},\r\n        (error: any) => {\r\n          console.error(error);\r\n          throw error;\r\n        }\r\n      )\r\n    );\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 15,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "interceptor"
+        }
+    ],
+    "classes": [
+        {
+            "name": "AppPage",
+            "id": "class-AppPage-c64aeb10afec1fb900b16e4677a470d2db03cfda8c036b08d1738256cafdefe42d5eeb1a632d0e5bc92d172d7c81e87758250e1b0de831bbbdcd0aca922388b3",
+            "file": "e2e/src/app.po.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "import { browser, by, element } from 'protractor';\r\n\r\nexport class AppPage {\r\n  navigateTo() {\r\n    return browser.get('/');\r\n  }\r\n\r\n  getMainHeading() {\r\n    return element(by.css('app-root h1')).getText();\r\n  }\r\n}\r\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getMainHeading",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 8,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "navigateTo",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 4,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "ShortenUrlModel",
+            "id": "class-ShortenUrlModel-1cbcdbe06c4990b4dbe45d538ef389e9627b257311e1fba6759fcc513892634699238ea10d6eaf8616ba43446af9cb4bc8428f6b3fa14b203b0675d173192531",
+            "file": "src/app/models/shorten-url.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class ShortenUrlModel {\r\n  public shortUrl: string = '';\r\n  public urlHash: string = '';\r\n  public fullUrl: string = '';\r\n  public urlClickCount: number = 0;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "fullUrl",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "shortUrl",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "urlClickCount",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 5,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "urlHash",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-549e500df725fb5b5ed0758ea2d5ca574a298c5079c7c61f6d496f117408c8d996093b423d0f1bb5c937c0c05d4dc79d88acf2c569deebdb65e3d9983fa46e06",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'app'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html'\r\n})\r\nexport class AppComponent {\r\n  title = 'app';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "templateData": "<router-outlet></router-outlet>\r\n"
+        },
+        {
+            "name": "HomeComponent",
+            "id": "component-HomeComponent-1231644840a987d2f58ec29e90861da3fc72bbcc43731c0b9d1ba54eae834d23ebf0a1b200e3c1b394a8029727cc4411ec9a0dc62396f84291d159dd461e0090",
+            "file": "src/app/components/home/home.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-home",
+            "styleUrls": [
+                "./home.component.less"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./home.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "_showErrorBlock",
+                    "defaultValue": "new BehaviorSubject<boolean>(false)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "firstShowCount",
+                    "defaultValue": "5",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        121,
+                        144
+                    ]
+                },
+                {
+                    "name": "shortenLinkForm",
+                    "defaultValue": "new FormGroup({\n    shortenLink: new FormControl('', [\n      Validators.pattern(\n        '(https?://)?([\\\\da-z.-]+)\\\\.([a-z.]{2,6})[/\\\\w .-]*/?'\n      ),\n    ]),\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "shortenUrls",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ShortenUrlModel[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 27,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "showErrorBlock$",
+                    "defaultValue": "this._showErrorBlock.asObservable()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Observable<boolean>",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "unsubscribe$",
+                    "defaultValue": "new Subject<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subject<void>",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "clickByUrl",
+                    "args": [
+                        {
+                            "name": "urlHash",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 62,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "urlHash",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteUrl",
+                    "args": [
+                        {
+                            "name": "urlHash",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 76,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "urlHash",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "loadUserUrls",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 90,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 35,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "shortUrl",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "showErrorBlock",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 102,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ShortUrlGrid } from './../../interfaces/short-url-grid.interface';\nimport { ShortenUrlModel } from './../../models/shorten-url.model';\nimport { HttpProxyShortenUrlService } from './../../services/http-proxy-shorten-url.service';\nimport { BehaviorSubject, Observable, Subject } from 'rxjs';\nimport { Component, OnDestroy, OnInit } from '@angular/core';\nimport { FormControl, FormGroup, Validators } from '@angular/forms';\nimport { takeUntil } from 'rxjs/operators';\n\n@Component({\n  selector: 'app-home',\n  templateUrl: './home.component.html',\n  styleUrls: ['./home.component.less'],\n})\nexport class HomeComponent implements OnInit, OnDestroy {\n  private unsubscribe$: Subject<void> = new Subject<void>();\n  private readonly firstShowCount: number = 5;\n  private _showErrorBlock = new BehaviorSubject<boolean>(false);\n  public showErrorBlock$: Observable<boolean> =\n    this._showErrorBlock.asObservable();\n  public shortenLinkForm: FormGroup = new FormGroup({\n    shortenLink: new FormControl('', [\n      Validators.pattern(\n        '(https?://)?([\\\\da-z.-]+)\\\\.([a-z.]{2,6})[/\\\\w .-]*/?'\n      ),\n    ]),\n  });\n  public shortenUrls: ShortenUrlModel[] = [];\n\n  constructor(private readonly httpProxy: HttpProxyShortenUrlService) {}\n\n  public ngOnInit(): void {\n    this.loadUserUrls();\n  }\n\n  public ngOnDestroy(): void {\n    this.unsubscribe$.next();\n    this.unsubscribe$.complete();\n  }\n\n  public shortUrl(): void {\n    if (\n      !this.shortenLinkForm.get('shortenLink')?.value ||\n      this.shortenLinkForm.get('shortenLink')?.invalid\n    ) {\n      this.showErrorBlock();\n      return;\n    }\n\n    this.httpProxy\n      .addBatchOfLinks([this.shortenLinkForm.get('shortenLink')?.value])\n      .pipe(takeUntil(this.unsubscribe$))\n      .subscribe(\n        (x: ShortUrlGrid) => {\n          if (this.firstShowCount > this.shortenUrls.length) {\n            this.shortenUrls.unshift(x.shortenUrls[0]);\n          }\n        },\n        () => {}\n      );\n  }\n\n  public clickByUrl(urlHash: string): void {\n    this.httpProxy\n      .clickLink(urlHash)\n      .pipe(takeUntil(this.unsubscribe$))\n      .subscribe(\n        (x: number) => {\n          this.shortenUrls.filter(\n            (v) => v.urlHash === urlHash\n          )[0].urlClickCount = x;\n        },\n        () => {}\n      );\n  }\n\n  public deleteUrl(urlHash: string): void {\n    this.httpProxy\n      .deleteLink(urlHash)\n      .pipe(takeUntil(this.unsubscribe$))\n      .subscribe(\n        () => {\n          this.shortenUrls = this.shortenUrls.filter(\n            (v) => v.urlHash !== urlHash\n          );\n        },\n        () => {}\n      );\n  }\n\n  private loadUserUrls(): void {\n    this.httpProxy\n      .getUserLinks('', 'createdon', 'asc', 0, this.firstShowCount)\n      .pipe(takeUntil(this.unsubscribe$))\n      .subscribe(\n        (x: ShortUrlGrid) => {\n          this.shortenUrls = x.shortenUrls;\n        },\n        () => {}\n      );\n  }\n\n  private showErrorBlock(): void {\n    this._showErrorBlock.next(true);\n    setTimeout(() => this._showErrorBlock.next(false), 3000);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "::ng-deep {\r\n  .mat-form-field-appearance-fill {\r\n    .mat-form-field-flex {\r\n      background-color: #ffffff;\r\n      width: 300px;\r\n    }\r\n  }\r\n}\r\n\r\n.form-shorter-url {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100vh;\r\n  flex-direction: column;\r\n}\r\n\r\n.show-block {\r\n  width: 50%;\r\n  display: flex;\r\n  justify-content: center;\r\n  padding: 16px;\r\n  border: 1px solid;\r\n  border-radius: 7px;\r\n  box-shadow: 1px 1px 10px 2px #cdcdcd;\r\n}\r\n\r\n.flex-d-column {\r\n  flex-direction: column;\r\n}\r\n\r\n.flex-center {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.error-block {\r\n  width: 50%;\r\n  display: flex;\r\n  justify-content: center;\r\n  padding: 16px;\r\n  border-radius: 7px;\r\n  background-color: #ffa8a8;\r\n  margin-top: 30px;\r\n}\r\n\r\n.self-url-block {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  margin: 5px;\r\n}\r\n\r\n.ml16 {\r\n  margin-left: 16px;\r\n}\r\n\r\n.ml40 {\r\n  margin-left: 40px;\r\n}\r\n\r\n.mt16 {\r\n  margin-top: 16px;\r\n}\r\n",
+                    "styleUrl": "./home.component.less"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "httpProxy",
+                        "type": "HttpProxyShortenUrlService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 27,
+                "jsdoctags": [
+                    {
+                        "name": "httpProxy",
+                        "type": "HttpProxyShortenUrlService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit",
+                "OnDestroy"
+            ],
+            "templateData": "<div class=\"form-shorter-url\">\n  <div class=\"show-block\">\n    <form [formGroup]=\"shortenLinkForm\">\n      <mat-form-field appearance=\"fill\">\n        <mat-label>Shorten your link</mat-label>\n        <input matInput formControlName=\"shortenLink\" />\n      </mat-form-field>\n      <button\n        class=\"ml16\"\n        mat-raised-button\n        color=\"primary\"\n        (click)=\"shortUrl()\"\n      >\n        Shorten\n      </button>\n    </form>\n  </div>\n  <div class=\"error-block\" *ngIf=\"showErrorBlock$ | async\">\n    Unable to shorten that link. It is not a valid url.\n  </div>\n  <div\n    class=\"mt16 show-block flex-d-column\"\n    *ngIf=\"shortenUrls && shortenUrls.length > 0\"\n  >\n    <div *ngFor=\"let shortenUrl of shortenUrls\">\n      <div class=\"self-url-block\">\n        <span\n          [matBadge]=\"shortenUrl.urlClickCount\"\n          matBadgeOverlap=\"false\"\n          matBadgePosition=\"after\"\n          ><a\n            target=\"_blank\"\n            [href]=\"shortenUrl.fullUrl\"\n            (click)=\"clickByUrl(shortenUrl.urlHash)\"\n            >{{ shortenUrl.shortUrl }}</a\n          ></span\n        >\n        <button\n          mat-stroked-button\n          color=\"warn\"\n          class=\"ml40\"\n          (click)=\"deleteUrl(shortenUrl.urlHash)\"\n        >\n          Delete\n        </button>\n      </div>\n    </div>\n    <div class=\"mt16 flex-center\">\n      <a mat-button color=\"primary\" routerLink=\"/link-table\"\n        >Show all shorten urls</a\n      >\n    </div>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "LinkTableComponent",
+            "id": "component-LinkTableComponent-9bcffda7f0da10a508fc69ee94938c2896243314d02fc59e1773d3939e051b54d0909e109049bb75ad143821cab575547e966ec362451a98bbcadde552f24601",
+            "file": "src/app/components/link-table/app/link-table.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-link-table",
+            "styleUrls": [
+                "./link-table.component.less"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./link-table.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "dataSource",
+                    "defaultValue": "new MatTableDataSource<ShortenUrlModel>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 34,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "displayedColumns",
+                    "defaultValue": "[\n    'shortUrl',\n    'fullUrl',\n    'urlClickCount',\n    'delete',\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 26,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "length",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 32,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "pageSize",
+                    "defaultValue": "10",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 33,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "paginator",
+                    "defaultValue": "{} as MatPaginator",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatPaginator",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "MatPaginator"
+                        }
+                    ]
+                },
+                {
+                    "name": "paginatorState",
+                    "defaultValue": "{\n    pageIndex: 0,\n    length: 0,\n  } as PageEvent",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "PageEvent",
+                    "optional": false,
+                    "description": "",
+                    "line": 37,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "shortenUrls",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ShortenUrlModel[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 35,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "sort",
+                    "defaultValue": "{} as MatSort",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MatSort",
+                    "optional": false,
+                    "description": "",
+                    "line": 24,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "MatSort"
+                        }
+                    ]
+                },
+                {
+                    "name": "sortState",
+                    "defaultValue": "{} as Sort",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Sort",
+                    "optional": false,
+                    "description": "",
+                    "line": 36,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "unsubscribe$",
+                    "defaultValue": "new Subject<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subject<void>",
+                    "optional": false,
+                    "description": "",
+                    "line": 25,
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "changePaginator",
+                    "args": [
+                        {
+                            "name": "paginatorState",
+                            "type": "PageEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 78,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "paginatorState",
+                            "type": "PageEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "clickByUrl",
+                    "args": [
+                        {
+                            "name": "urlHash",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 57,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "urlHash",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteUrl",
+                    "args": [
+                        {
+                            "name": "urlHash",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 84,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "urlHash",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "loadUserUrls",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 99,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 52,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 47,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 43,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "sortChange",
+                    "args": [
+                        {
+                            "name": "sortState",
+                            "type": "Sort",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 72,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "sortState",
+                            "type": "Sort",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "updateDataSource",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 119,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { ShortUrlGrid } from './../../../interfaces/short-url-grid.interface';\nimport { ShortenUrlModel } from './../../../models/shorten-url.model';\nimport { HttpProxyShortenUrlService } from './../../../services/http-proxy-shorten-url.service';\nimport {\n  Component,\n  OnInit,\n  OnDestroy,\n  ViewChild,\n  AfterViewInit,\n} from '@angular/core';\nimport { takeUntil } from 'rxjs/operators';\nimport { Subject } from 'rxjs';\nimport { MatTableDataSource } from '@angular/material/table';\nimport { MatPaginator, PageEvent } from '@angular/material/paginator';\nimport { MatSort, Sort } from '@angular/material/sort';\n\n@Component({\n  selector: 'app-link-table',\n  templateUrl: './link-table.component.html',\n  styleUrls: ['./link-table.component.less'],\n})\nexport class LinkTableComponent implements OnInit, OnDestroy, AfterViewInit {\n  @ViewChild(MatPaginator) paginator: MatPaginator = {} as MatPaginator;\n  @ViewChild(MatSort) sort: MatSort = {} as MatSort;\n  private unsubscribe$: Subject<void> = new Subject<void>();\n  public displayedColumns: string[] = [\n    'shortUrl',\n    'fullUrl',\n    'urlClickCount',\n    'delete',\n  ];\n  public length = 0;\n  public pageSize = 10;\n  public dataSource = new MatTableDataSource<ShortenUrlModel>();\n  public shortenUrls: ShortenUrlModel[] = [];\n  private sortState: Sort = {} as Sort;\n  private paginatorState: PageEvent = {\n    pageIndex: 0,\n    length: 0,\n  } as PageEvent;\n  constructor(private readonly httpProxy: HttpProxyShortenUrlService) {}\n\n  public ngOnInit() {\n    this.loadUserUrls();\n  }\n\n  public ngOnDestroy(): void {\n    this.unsubscribe$.next();\n    this.unsubscribe$.complete();\n  }\n\n  public ngAfterViewInit() {\n    this.dataSource.paginator = this.paginator;\n    this.dataSource.sort = this.sort;\n  }\n\n  public clickByUrl(urlHash: string): void {\n    this.httpProxy\n      .clickLink(urlHash)\n      .pipe(takeUntil(this.unsubscribe$))\n      .subscribe(\n        (x: number) => {\n          this.shortenUrls.filter(\n            (v) => v.urlHash === urlHash\n          )[0].urlClickCount = x;\n          this.updateDataSource();\n        },\n        () => {}\n      );\n  }\n\n  public sortChange(sortState: Sort): void {\n    this.sortState = sortState;\n    this.paginator.firstPage();\n    this.loadUserUrls();\n  }\n\n  public changePaginator(paginatorState: PageEvent): void {\n    this.paginatorState = paginatorState;\n    this.pageSize = this.paginatorState.pageSize;\n    this.loadUserUrls();\n  }\n\n  public deleteUrl(urlHash: string): void {\n    this.httpProxy\n      .deleteLink(urlHash)\n      .pipe(takeUntil(this.unsubscribe$))\n      .subscribe(\n        () => {\n          this.shortenUrls = this.shortenUrls.filter(\n            (v) => v.urlHash !== urlHash\n          );\n          this.updateDataSource();\n        },\n        () => {}\n      );\n  }\n\n  private loadUserUrls(): void {\n    this.httpProxy\n      .getUserLinks(\n        '',\n        this.sortState.active,\n        this.sortState.direction,\n        this.pageSize * this.paginatorState.pageIndex,\n        this.pageSize\n      )\n      .pipe(takeUntil(this.unsubscribe$))\n      .subscribe(\n        (x: ShortUrlGrid) => {\n          this.shortenUrls = x.shortenUrls;\n          this.length = x.total;\n          this.updateDataSource();\n        },\n        () => {}\n      );\n  }\n\n  private updateDataSource(): void {\n    this.dataSource = new MatTableDataSource<ShortenUrlModel>(this.shortenUrls);\n    this.dataSource.sort = this.sort;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".w60 {\r\n  width: 60%;\r\n}\r\n\r\n.w100 {\r\n  width: 100%;\r\n}\r\n\r\nth.mat-sort-header-sorted {\r\n  color: black;\r\n}\r\n\r\n.ml16 {\r\n  margin-left: 16px;\r\n}\r\n\r\n.ml40 {\r\n  margin-left: 40px;\r\n}\r\n\r\n.mt16 {\r\n  margin-top: 16px;\r\n}\r\n",
+                    "styleUrl": "./link-table.component.less"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "httpProxy",
+                        "type": "HttpProxyShortenUrlService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 40,
+                "jsdoctags": [
+                    {
+                        "name": "httpProxy",
+                        "type": "HttpProxyShortenUrlService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit",
+                "OnDestroy",
+                "AfterViewInit"
+            ],
+            "templateData": "<div><a mat-button color=\"primary\" routerLink=\"../../\">Return to home</a></div>\n<div class=\"mat-elevation-z8 w60 mt16\">\n  <table\n    mat-table\n    [dataSource]=\"dataSource\"\n    matSort\n    (matSortChange)=\"sortChange($event)\"\n    class=\"w100\"\n  >\n    <ng-container matColumnDef=\"shortUrl\">\n      <th\n        mat-header-cell\n        *matHeaderCellDef\n        mat-sort-header\n        sortActionDescription=\"Sort by short url\"\n      >\n        Short Url\n      </th>\n      <td mat-cell *matCellDef=\"let element\">\n        <a\n          target=\"_blank\"\n          [href]=\"element.shortUrl\"\n          (click)=\"clickByUrl(element.urlHash)\"\n          >{{ element.shortUrl }}</a\n        >\n      </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"fullUrl\">\n      <th\n        mat-header-cell\n        *matHeaderCellDef\n        mat-sort-header\n        sortActionDescription=\"Sort by full url\"\n      >\n        Full Url\n      </th>\n      <td mat-cell *matCellDef=\"let element\">\n        <a\n          target=\"_blank\"\n          [href]=\"element.fullUrl\"\n          (click)=\"clickByUrl(element.urlHash)\"\n          >{{ element.fullUrl }}</a\n        >\n      </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"urlClickCount\">\n      <th\n        mat-header-cell\n        *matHeaderCellDef\n        mat-sort-header\n        sortActionDescription=\"Sort by clicking\"\n      >\n        Click Count\n      </th>\n      <td mat-cell *matCellDef=\"let element\">{{ element.urlClickCount }}</td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"delete\">\n      <th mat-header-cell *matHeaderCellDef></th>\n      <td mat-cell *matCellDef=\"let element\">\n        <button\n          mat-stroked-button\n          color=\"warn\"\n          class=\"ml40\"\n          (click)=\"deleteUrl(element.urlHash)\"\n        >\n          Delete\n        </button>\n      </td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns\"></tr>\n  </table>\n\n  <mat-paginator\n    [length]=\"length\"\n    [pageSize]=\"pageSize\"\n    [pageSizeOptions]=\"[5, 10, 20]\"\n    (page)=\"changePaginator($event)\"\n    showFirstLastButtons\n    aria-label=\"Select page of periodic elements\"\n  >\n  </mat-paginator>\n</div>\n"
+        },
+        {
+            "name": "LinkTableRouterComponent",
+            "id": "component-LinkTableRouterComponent-b0c77d5f9ade7e988220876937517d358fbcb6b186d649266a31d8b100df994eb39f2f1c509072a063486e8e1e985f68df177177980605daeff1a45e0d39d632",
+            "file": "src/app/components/link-table/link-table-router.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-link-table-router",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./link-table-router.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-link-table-router',\r\n  templateUrl: './link-table-router.component.html',\r\n})\r\nexport class LinkTableRouterComponent {}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "templateData": "<router-outlet></router-outlet>\r\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "id": "module-AppModule-421c0e9c80c8817002324466857e6d86df89d24c58ef0623d1a6910b72b8793679980cf9fed97ba08ae36608907da4b4b4d34f9201f0a5d6989b39068999f337",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { HttpProxyShortenUrlService } from './services/http-proxy-shorten-url.service';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { NgModule } from '@angular/core';\r\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\r\nimport {\r\n  HttpClient,\r\n  HttpClientModule,\r\n  HttpClientXsrfModule,\r\n  HTTP_INTERCEPTORS,\r\n} from '@angular/common/http';\r\n\r\nimport { AppComponent } from './app.component';\r\nimport { HomeComponent } from './components/home/home.component';\r\nimport { HttpProxyInterceptorService } from './services/http-proxy-interseptor.service';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { TranslocoRootModule } from './transloco-root.module';\r\nimport { MaterialModule } from './material.module';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\n\r\n@NgModule({\r\n  declarations: [AppComponent, HomeComponent],\r\n  imports: [\r\n    BrowserModule,\r\n    BrowserAnimationsModule,\r\n    CommonModule,\r\n    HttpClientModule,\r\n    FormsModule,\r\n    ReactiveFormsModule,\r\n    AppRoutingModule,\r\n    MaterialModule,\r\n    TranslocoRootModule,\r\n    HttpClientXsrfModule.withOptions({\r\n      cookieName: 'XSRF-TOKEN',\r\n      headerName: 'X-XSRF-TOKEN',\r\n    }),\r\n  ],\r\n  providers: [\r\n    HttpClient,\r\n    HttpProxyShortenUrlService,\r\n    {\r\n      provide: HTTP_INTERCEPTORS,\r\n      useClass: HttpProxyInterceptorService,\r\n      multi: true,\r\n    },\r\n  ],\r\n  bootstrap: [AppComponent],\r\n  exports: [AppComponent, HomeComponent],\r\n})\r\nexport class AppModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": [
+                        {
+                            "name": "HttpProxyInterceptorService"
+                        },
+                        {
+                            "name": "HttpProxyShortenUrlService"
+                        }
+                    ]
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        },
+                        {
+                            "name": "HomeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppRoutingModule"
+                        },
+                        {
+                            "name": "MaterialModule"
+                        },
+                        {
+                            "name": "TranslocoRootModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        },
+                        {
+                            "name": "HomeComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "id": "module-AppRoutingModule-d7791abdd2290c79fbdbed1f541419986e5d53d15f3e79dc21d6b8aaba9058de38147df8e60f9509a3b6c5bc98cd678ad365f76d0210727c8b0786c88508edb8",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { Routes, RouterModule } from '@angular/router';\r\nimport { HomeComponent } from './components/home/home.component';\r\n\r\nconst appRoutes: Routes = [\r\n  { path: '', component: HomeComponent, pathMatch: 'full' },\r\n  {\r\n    path: 'link-table',\r\n    loadChildren: () =>\r\n      \"import('./components/link-table/link-table.module').then(\\\n        (m) => m.LinkTableModule\\\n      )\",\r\n  },\r\n];\r\n\r\n@NgModule({\r\n  imports: [\r\n    RouterModule.forRoot(appRoutes, {\r\n      useHash: true,\r\n      relativeLinkResolution: 'legacy',\r\n    }),\r\n  ],\r\n  exports: [RouterModule],\r\n})\r\nexport class AppRoutingModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "LinkTableModule",
+            "id": "module-LinkTableModule-5beba51e57706935bcc97dc4da2db835dd2cbdd0ffa1d0600e28a91875bb2b8fcc765a7ec7eba49addb5bf3bf05d19f00bb27d4c5b58621d2052db92e0fbe196",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/link-table/link-table.module.ts",
+            "methods": [],
+            "sourceCode": "import { LinkTableRouterComponent } from './link-table-router.component';\r\nimport { MaterialModule } from './../../material.module';\r\nimport { LinkTableRoutingModule } from './link-table-routing.module';\r\nimport { TranslocoRootModule } from './../../transloco-root.module';\r\nimport { HttpProxyShortenUrlService } from './../../services/http-proxy-shorten-url.service';\r\nimport { LinkTableComponent } from './app/link-table.component';\r\nimport { NgModule } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { HttpClient, HttpClientModule } from '@angular/common/http';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@NgModule({\r\n  declarations: [LinkTableRouterComponent, LinkTableComponent],\r\n  imports: [\r\n    CommonModule,\r\n    HttpClientModule,\r\n    FormsModule,\r\n    LinkTableRoutingModule,\r\n    TranslocoRootModule,\r\n    MaterialModule,\r\n  ],\r\n  providers: [HttpClient, HttpProxyShortenUrlService],\r\n  exports: [LinkTableComponent],\r\n})\r\nexport class LinkTableModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": [
+                        {
+                            "name": "HttpProxyShortenUrlService"
+                        }
+                    ]
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "LinkTableComponent"
+                        },
+                        {
+                            "name": "LinkTableRouterComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "LinkTableRoutingModule"
+                        },
+                        {
+                            "name": "MaterialModule"
+                        },
+                        {
+                            "name": "TranslocoRootModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "LinkTableComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "LinkTableRoutingModule",
+            "id": "module-LinkTableRoutingModule-0b633bbd56ddd83fb99d1283a4bff17ad92a573490d614db2b7c94f662546ddab636e37d67a0f99bed0b920b7cc44a0f90aadd39cc3655cddf65b57ad7501943",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/link-table/link-table-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { LinkTableComponent } from './app/link-table.component';\r\nimport { LinkTableRouterComponent } from './link-table-router.component';\r\nimport { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: '',\r\n    component: LinkTableRouterComponent,\r\n    children: [\r\n      {\r\n        path: '',\r\n        pathMatch: 'full',\r\n        redirectTo: 'app',\r\n      },\r\n      {\r\n        path: 'app',\r\n        component: LinkTableComponent,\r\n      },\r\n    ],\r\n  },\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forChild(routes)],\r\n  exports: [RouterModule],\r\n})\r\nexport class LinkTableRoutingModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "MaterialModule",
+            "id": "module-MaterialModule-398d3fcc6f94e662f6613b28ea6e95f391a48deb29f3fcc0a5dd0fc02fe0b7958eaf4eedd010f03750115339dad8d065039abfd5cb6c7d7a1213521e4d158a85",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/material.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\n\r\nimport { MatCardModule } from '@angular/material/card';\r\nimport { MatInputModule } from '@angular/material/input';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatCommonModule } from '@angular/material/core';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatCheckboxModule } from '@angular/material/checkbox';\r\nimport { MatSelectModule } from '@angular/material/select';\r\nimport { MatFormFieldModule } from '@angular/material/form-field';\r\nimport { MatBadgeModule } from '@angular/material/badge';\r\nimport { MatPaginatorModule } from '@angular/material/paginator';\r\nimport { MatTableModule } from '@angular/material/table';\r\nimport { MatSortModule } from '@angular/material/sort';\r\nimport { MatTooltipModule } from '@angular/material/tooltip';\r\nimport { OverlayModule } from '@angular/cdk/overlay';\r\n\r\nconst modules = [\r\n  MatCardModule,\r\n  MatInputModule,\r\n  MatButtonModule,\r\n  MatCommonModule,\r\n  MatIconModule,\r\n  MatCheckboxModule,\r\n  MatSelectModule,\r\n  MatBadgeModule,\r\n  MatFormFieldModule,\r\n  MatPaginatorModule,\r\n  MatTableModule,\r\n  MatSortModule,\r\n  MatTooltipModule,\r\n  OverlayModule,\r\n];\r\n\r\n@NgModule({\r\n  imports: modules,\r\n  exports: modules,\r\n})\r\nexport class MaterialModule {}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TranslocoRootModule",
+            "id": "module-TranslocoRootModule-d3d112cccfda268069f30675c12e300873ff700a9ad6b11237c291eb5e58156cf9867cd7829d5146d33240074651e7e1cfb36e28a720d8f86ce35524655f2d92",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/transloco-root.module.ts",
+            "methods": [],
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\r\nimport {\r\n  TRANSLOCO_LOADER,\r\n  Translation,\r\n  TranslocoLoader,\r\n  TRANSLOCO_CONFIG,\r\n  translocoConfig,\r\n  TranslocoModule,\r\n  HashMap,\r\n} from '@ngneat/transloco';\r\nimport { Injectable, NgModule } from '@angular/core';\r\nimport { environment } from '../environments/environment';\r\nimport { forkJoin, Observable, Subscriber } from 'rxjs';\r\nimport { map } from 'rxjs/operators';\r\n\r\nconst localizationUrl = '/ControlPanel/GetLocalization';\r\nconst LOCALIZATION_FILE_PATH = ['ControlPanel/ControlPanel'];\r\n\r\n@Injectable({ providedIn: 'root' })\r\nexport class TranslocoHttpLoader implements TranslocoLoader {\r\n  constructor(private http: HttpClient) {}\r\n\r\n  getTranslation(lang: string) {\r\n    const loadObservables = LOCALIZATION_FILE_PATH.map((item: string) =>\r\n      getFileLoader(this.http, localizationUrl, `${item}.`)\r\n    );\r\n\r\n    const result = forkJoin(loadObservables).pipe(\r\n      map((results: HashMap<any>[]) => {\r\n        return results.reduce((accumulator, currentValue) => {\r\n          return merge([accumulator, currentValue]);\r\n        }, {});\r\n      })\r\n    );\r\n\r\n    return result;\r\n  }\r\n}\r\n\r\n@NgModule({\r\n  exports: [TranslocoModule],\r\n  providers: [\r\n    {\r\n      provide: TRANSLOCO_CONFIG,\r\n      useValue: translocoConfig({\r\n        availableLangs: [\r\n          'en',\r\n          'de',\r\n          'en-AU',\r\n          'en-GB',\r\n          'fr-CA',\r\n          'it',\r\n          'ja',\r\n          'nl',\r\n        ],\r\n        defaultLang: 'en',\r\n        reRenderOnLangChange: true,\r\n        prodMode: environment.production,\r\n      }),\r\n    },\r\n    { provide: TRANSLOCO_LOADER, useClass: TranslocoHttpLoader },\r\n  ],\r\n})\r\nexport class TranslocoRootModule {}\r\n\r\nfunction getFileLoader(\r\n  http: HttpClient,\r\n  url: string,\r\n  resourcePath: string\r\n): Observable<Translation> {\r\n  return new Observable<Translation>((observer: Subscriber<HashMap<any>>) => {\r\n    http.post<Translation>(url, { resourcePath }).subscribe(\r\n      (data: HashMap<any>) => {\r\n        observer.next(data);\r\n        observer.complete();\r\n      },\r\n      () => {\r\n        observer.next({});\r\n        observer.complete();\r\n      }\r\n    );\r\n  });\r\n}\r\n\r\nfunction merge(objects: any[]): any {\r\n  const target = {} as any;\r\n  // Merge the object into the target object\r\n  const merger = (obj: any) => {\r\n    for (const prop in obj) {\r\n      if (obj.hasOwnProperty(prop)) {\r\n        if (Object.prototype.toString.call(obj[prop]) === '[object Object]') {\r\n          // If we're doing a deep merge\r\n          // and the property is an object\r\n          target[prop] = merge([target[prop], obj[prop]]);\r\n        } else {\r\n          // Otherwise, do a regular merge\r\n          target[prop] = obj[prop];\r\n        }\r\n      }\r\n    }\r\n  };\r\n\r\n  // tslint:disable-next-line: prefer-for-of\r\n  for (let i = 0; i < objects.length; i++) {\r\n    merger(objects[i]);\r\n  }\r\n\r\n  return target;\r\n}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "apiBase",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/home/home.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "'/short-url/short'"
+            },
+            {
+                "name": "basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/home/home.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<HomeComponent>",
+                "defaultValue": "templateUserPassword.bind({})"
+            },
+            {
+                "name": "basicWithData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/home/home.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<HomeComponent>",
+                "defaultValue": "templateUserPassword.bind(\r\n  {}\r\n)"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: true\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false\r\n}"
+            },
+            {
+                "name": "errorUrl",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/home/home.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<HomeComponent>",
+                "defaultValue": "templateUserPassword.bind({})"
+            },
+            {
+                "name": "LOCALIZATION_FILE_PATH",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/transloco-root.module.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "['ControlPanel/ControlPanel']"
+            },
+            {
+                "name": "localizationUrl",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/transloco-root.module.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "'/ControlPanel/GetLocalization'"
+            },
+            {
+                "name": "mocks",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/home/home.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n  rest.post(`${apiBase}`, (req, res, ctx) => {\r\n    return res(\r\n      ctx.json({\r\n        total: 5,\r\n        shortenUrls: [\r\n          {\r\n            fullUrl: 'https://example.com/adst/sa/sdss/d3222/ss3fa',\r\n            shortUrl: 'https://twd.com/eeeeeeeeeeee',\r\n            urlClickCount: 0,\r\n            urlHash: 'eeeeeeeeeeee',\r\n          } as ShortenUrlModel,\r\n        ],\r\n      } as ShortUrlGrid)\r\n    );\r\n  }),\r\n  rest.delete(`${apiBase}/:urlHash`, (req, res, ctx) => {\r\n    return res(ctx.json(true));\r\n  }),\r\n  rest.put(`${apiBase}/:urlHash`, (req, res, ctx) => {\r\n    let result = 1;\r\n    if (req.params.urlHash) {\r\n      result = mockUrlData.filter((x) => x.urlHash === req.params.urlHash)[0]\r\n        .urlClickCount++;\r\n    }\r\n\r\n    return res(ctx.json(result));\r\n  }),\r\n  rest.get(`${apiBase}`, (req, res, ctx) => {\r\n    return res(ctx.json({ total: 0, shortenUrls: [] } as ShortUrlGrid));\r\n  }),\r\n]"
+            },
+            {
+                "name": "mockUrlData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/home/home.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/ssfa',\r\n    shortUrl: 'https://twd.com/esfe443rfsfds',\r\n    urlClickCount: 10,\r\n    urlHash: 'esfe443rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/sssfa',\r\n    shortUrl: 'https://twd.com/esfer43rfsfds',\r\n    urlClickCount: 2,\r\n    urlHash: 'esfer43rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/s2sfa',\r\n    shortUrl: 'https://twd.com/esft443rfsfds',\r\n    urlClickCount: 3,\r\n    urlHash: 'esft443rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/s1sfa',\r\n    shortUrl: 'https://twd.com/esfg443rfsfds',\r\n    urlClickCount: 4,\r\n    urlHash: 'esfg443rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/ss3fa',\r\n    shortUrl: 'https://twd.com/esfez43rfsfds',\r\n    urlClickCount: 5,\r\n    urlHash: 'esfez43rfsfds',\r\n  } as ShortenUrlModel,\r\n]"
+            },
+            {
+                "name": "mockUrlData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/link-table/app/link-table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/ssfa',\r\n    shortUrl: 'https://twd.com/esfe443rfsfds',\r\n    urlClickCount: 10,\r\n    urlHash: 'esfe443rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/sssfa',\r\n    shortUrl: 'https://twd.com/esfer43rfsfds',\r\n    urlClickCount: 2,\r\n    urlHash: 'esfer43rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/s2sfa',\r\n    shortUrl: 'https://twd.com/esft443rfsfds',\r\n    urlClickCount: 3,\r\n    urlHash: 'esft443rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/s1sfa',\r\n    shortUrl: 'https://twd.com/esfg443rfsfds',\r\n    urlClickCount: 4,\r\n    urlHash: 'esfg443rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/ss3fa',\r\n    shortUrl: 'https://twd.com/esfez43rfsfds',\r\n    urlClickCount: 5,\r\n    urlHash: 'esfez43rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/s4sfa',\r\n    shortUrl: 'https://twd.com/esfec43rfsfds',\r\n    urlClickCount: 0,\r\n    urlHash: 'esfec43rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/ss2fa',\r\n    shortUrl: 'https://twd.com/esfed44rfsfds',\r\n    urlClickCount: 0,\r\n    urlHash: 'esfed44rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/s5sfa',\r\n    shortUrl: 'https://twd.com/esfef46yfsfds',\r\n    urlClickCount: 0,\r\n    urlHash: 'esfef46yfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/ss7fa',\r\n    shortUrl: 'https://twd.com/esfeh468fsfds',\r\n    urlClickCount: 0,\r\n    urlHash: 'esfeh468fsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/ss8fa',\r\n    shortUrl: 'https://twd.com/esfe44hgjsfds',\r\n    urlClickCount: 0,\r\n    urlHash: 'esfe44hgjsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/s0sfa',\r\n    shortUrl: 'https://twd.com/esfe44hkfsfds',\r\n    urlClickCount: 0,\r\n    urlHash: 'esfe44hkfsfds',\r\n  } as ShortenUrlModel,\r\n]"
+            },
+            {
+                "name": "mockWithData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/home/home.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "mocks.filter(\r\n  (x) => x.info.path !== `${apiBase}` && x.info.method.toLowerCase() !== 'get'\r\n)"
+            },
+            {
+                "name": "modules",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/material.module.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n  MatCardModule,\r\n  MatInputModule,\r\n  MatButtonModule,\r\n  MatCommonModule,\r\n  MatIconModule,\r\n  MatCheckboxModule,\r\n  MatSelectModule,\r\n  MatBadgeModule,\r\n  MatFormFieldModule,\r\n  MatPaginatorModule,\r\n  MatTableModule,\r\n  MatSortModule,\r\n  MatTooltipModule,\r\n  OverlayModule,\r\n]"
+            },
+            {
+                "name": "providers",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/main.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n  { provide: 'BASE_URL', useFactory: getBaseUrl, deps: [] }\r\n]"
+            },
+            {
+                "name": "templateUserPassword",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/home/home.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<HomeComponent>",
+                "defaultValue": "(args: any) => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n  moduleMetadata: {},\r\n})"
+            }
+        ],
+        "functions": [
+            {
+                "name": "getBaseUrl",
+                "file": "src/main.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": []
+            },
+            {
+                "name": "getFileLoader",
+                "file": "src/app/transloco-root.module.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "url",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "resourcePath",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "returnType": "Observable<Translation>",
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "url",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "resourcePath",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "merge",
+                "file": "src/app/transloco-root.module.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "objects",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "returnType": "any",
+                "jsdoctags": [
+                    {
+                        "name": "objects",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        ],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/components/home/home.stories.ts": [
+                {
+                    "name": "apiBase",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/home/home.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'/short-url/short'"
+                },
+                {
+                    "name": "basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/home/home.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<HomeComponent>",
+                    "defaultValue": "templateUserPassword.bind({})"
+                },
+                {
+                    "name": "basicWithData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/home/home.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<HomeComponent>",
+                    "defaultValue": "templateUserPassword.bind(\r\n  {}\r\n)"
+                },
+                {
+                    "name": "errorUrl",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/home/home.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<HomeComponent>",
+                    "defaultValue": "templateUserPassword.bind({})"
+                },
+                {
+                    "name": "mocks",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/home/home.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  rest.post(`${apiBase}`, (req, res, ctx) => {\r\n    return res(\r\n      ctx.json({\r\n        total: 5,\r\n        shortenUrls: [\r\n          {\r\n            fullUrl: 'https://example.com/adst/sa/sdss/d3222/ss3fa',\r\n            shortUrl: 'https://twd.com/eeeeeeeeeeee',\r\n            urlClickCount: 0,\r\n            urlHash: 'eeeeeeeeeeee',\r\n          } as ShortenUrlModel,\r\n        ],\r\n      } as ShortUrlGrid)\r\n    );\r\n  }),\r\n  rest.delete(`${apiBase}/:urlHash`, (req, res, ctx) => {\r\n    return res(ctx.json(true));\r\n  }),\r\n  rest.put(`${apiBase}/:urlHash`, (req, res, ctx) => {\r\n    let result = 1;\r\n    if (req.params.urlHash) {\r\n      result = mockUrlData.filter((x) => x.urlHash === req.params.urlHash)[0]\r\n        .urlClickCount++;\r\n    }\r\n\r\n    return res(ctx.json(result));\r\n  }),\r\n  rest.get(`${apiBase}`, (req, res, ctx) => {\r\n    return res(ctx.json({ total: 0, shortenUrls: [] } as ShortUrlGrid));\r\n  }),\r\n]"
+                },
+                {
+                    "name": "mockUrlData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/home/home.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/ssfa',\r\n    shortUrl: 'https://twd.com/esfe443rfsfds',\r\n    urlClickCount: 10,\r\n    urlHash: 'esfe443rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/sssfa',\r\n    shortUrl: 'https://twd.com/esfer43rfsfds',\r\n    urlClickCount: 2,\r\n    urlHash: 'esfer43rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/s2sfa',\r\n    shortUrl: 'https://twd.com/esft443rfsfds',\r\n    urlClickCount: 3,\r\n    urlHash: 'esft443rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/s1sfa',\r\n    shortUrl: 'https://twd.com/esfg443rfsfds',\r\n    urlClickCount: 4,\r\n    urlHash: 'esfg443rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/ss3fa',\r\n    shortUrl: 'https://twd.com/esfez43rfsfds',\r\n    urlClickCount: 5,\r\n    urlHash: 'esfez43rfsfds',\r\n  } as ShortenUrlModel,\r\n]"
+                },
+                {
+                    "name": "mockWithData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/home/home.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "mocks.filter(\r\n  (x) => x.info.path !== `${apiBase}` && x.info.method.toLowerCase() !== 'get'\r\n)"
+                },
+                {
+                    "name": "templateUserPassword",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/home/home.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<HomeComponent>",
+                    "defaultValue": "(args: any) => ({\r\n  props: {\r\n    ...args,\r\n  },\r\n  moduleMetadata: {},\r\n})"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "src/app/transloco-root.module.ts": [
+                {
+                    "name": "LOCALIZATION_FILE_PATH",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/transloco-root.module.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "['ControlPanel/ControlPanel']"
+                },
+                {
+                    "name": "localizationUrl",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/transloco-root.module.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'/ControlPanel/GetLocalization'"
+                }
+            ],
+            "src/app/components/link-table/app/link-table.stories.ts": [
+                {
+                    "name": "mockUrlData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/link-table/app/link-table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/ssfa',\r\n    shortUrl: 'https://twd.com/esfe443rfsfds',\r\n    urlClickCount: 10,\r\n    urlHash: 'esfe443rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/sssfa',\r\n    shortUrl: 'https://twd.com/esfer43rfsfds',\r\n    urlClickCount: 2,\r\n    urlHash: 'esfer43rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/s2sfa',\r\n    shortUrl: 'https://twd.com/esft443rfsfds',\r\n    urlClickCount: 3,\r\n    urlHash: 'esft443rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/s1sfa',\r\n    shortUrl: 'https://twd.com/esfg443rfsfds',\r\n    urlClickCount: 4,\r\n    urlHash: 'esfg443rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/ss3fa',\r\n    shortUrl: 'https://twd.com/esfez43rfsfds',\r\n    urlClickCount: 5,\r\n    urlHash: 'esfez43rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/s4sfa',\r\n    shortUrl: 'https://twd.com/esfec43rfsfds',\r\n    urlClickCount: 0,\r\n    urlHash: 'esfec43rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/ss2fa',\r\n    shortUrl: 'https://twd.com/esfed44rfsfds',\r\n    urlClickCount: 0,\r\n    urlHash: 'esfed44rfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/s5sfa',\r\n    shortUrl: 'https://twd.com/esfef46yfsfds',\r\n    urlClickCount: 0,\r\n    urlHash: 'esfef46yfsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/ss7fa',\r\n    shortUrl: 'https://twd.com/esfeh468fsfds',\r\n    urlClickCount: 0,\r\n    urlHash: 'esfeh468fsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/ss8fa',\r\n    shortUrl: 'https://twd.com/esfe44hgjsfds',\r\n    urlClickCount: 0,\r\n    urlHash: 'esfe44hgjsfds',\r\n  } as ShortenUrlModel,\r\n  {\r\n    fullUrl: 'https://example.com/adst/sa/sdss/d3222/s0sfa',\r\n    shortUrl: 'https://twd.com/esfe44hkfsfds',\r\n    urlClickCount: 0,\r\n    urlHash: 'esfe44hkfsfds',\r\n  } as ShortenUrlModel,\r\n]"
+                }
+            ],
+            "src/app/material.module.ts": [
+                {
+                    "name": "modules",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/material.module.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  MatCardModule,\r\n  MatInputModule,\r\n  MatButtonModule,\r\n  MatCommonModule,\r\n  MatIconModule,\r\n  MatCheckboxModule,\r\n  MatSelectModule,\r\n  MatBadgeModule,\r\n  MatFormFieldModule,\r\n  MatPaginatorModule,\r\n  MatTableModule,\r\n  MatSortModule,\r\n  MatTooltipModule,\r\n  OverlayModule,\r\n]"
+                }
+            ],
+            "src/main.ts": [
+                {
+                    "name": "providers",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/main.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  { provide: 'BASE_URL', useFactory: getBaseUrl, deps: [] }\r\n]"
+                }
+            ]
+        },
+        "groupedFunctions": {
+            "src/main.ts": [
+                {
+                    "name": "getBaseUrl",
+                    "file": "src/main.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": []
+                }
+            ],
+            "src/app/transloco-root.module.ts": [
+                {
+                    "name": "getFileLoader",
+                    "file": "src/app/transloco-root.module.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "http",
+                            "type": "HttpClient",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "resourcePath",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "Observable<Translation>",
+                    "jsdoctags": [
+                        {
+                            "name": "http",
+                            "type": "HttpClient",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "resourcePath",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "merge",
+                    "file": "src/app/transloco-root.module.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "objects",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "any",
+                    "jsdoctags": [
+                        {
+                            "name": "objects",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "appRoutes",
+                "filename": "src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [
+                    {
+                        "path": "",
+                        "component": "HomeComponent",
+                        "pathMatch": "full"
+                    },
+                    {
+                        "path": "link-table",
+                        "loadChildren": "./components/link-table/link-table.module#LinkTableModule",
+                        "children": [
+                            {
+                                "kind": "module",
+                                "children": [
+                                    {
+                                        "name": "routes",
+                                        "filename": "src/app/components/link-table/link-table-routing.module.ts",
+                                        "module": "LinkTableRoutingModule",
+                                        "children": [
+                                            {
+                                                "path": "",
+                                                "component": "LinkTableRouterComponent",
+                                                "children": [
+                                                    {
+                                                        "path": "",
+                                                        "pathMatch": "full",
+                                                        "redirectTo": "app"
+                                                    },
+                                                    {
+                                                        "path": "app",
+                                                        "component": "LinkTableComponent"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "kind": "module"
+                                    }
+                                ],
+                                "module": "LinkTableModule"
+                            }
+                        ]
+                    }
+                ],
+                "kind": "module"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "e2e/src/app.po.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "AppPage",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/home/home.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/15",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/home/home.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "apiBase",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/home/home.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/home/home.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "basicWithData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/home/home.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "errorUrl",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/home/home.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "mocks",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/home/home.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "mockUrlData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/home/home.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "mockWithData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/home/home.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "templateUserPassword",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/link-table/app/link-table.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LinkTableComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/21",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/link-table/app/link-table.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "mockUrlData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/link-table/link-table-router.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LinkTableRouterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/interfaces/short-url-grid.interface.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ShortUrlGrid",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/material.module.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "modules",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/models/shorten-url.model.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "ShortenUrlModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/http-proxy-interseptor.service.ts",
+                "type": "interceptor",
+                "linktype": "interceptor",
+                "name": "HttpProxyInterceptorService",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/services/http-proxy-shorten-url.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "HttpProxyShortenUrlService",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/transloco-root.module.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "TranslocoHttpLoader",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/transloco-root.module.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "getFileLoader",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/transloco-root.module.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "merge",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/transloco-root.module.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LOCALIZATION_FILE_PATH",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/transloco-root.module.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "localizationUrl",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/main.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "getBaseUrl",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/main.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "providers",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

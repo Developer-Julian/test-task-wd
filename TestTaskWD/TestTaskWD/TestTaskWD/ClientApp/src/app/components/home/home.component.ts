@@ -13,8 +13,8 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
-  private _showErrorBlock = new BehaviorSubject<boolean>(false);
   private readonly firstShowCount: number = 5;
+  private _showErrorBlock = new BehaviorSubject<boolean>(false);
   public showErrorBlock$: Observable<boolean> =
     this._showErrorBlock.asObservable();
   public shortenLinkForm: FormGroup = new FormGroup({
