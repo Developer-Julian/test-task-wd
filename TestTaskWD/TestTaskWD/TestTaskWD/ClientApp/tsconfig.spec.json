@@ -4,9 +4,10 @@
     "esModuleInterop": true,
     "emitDecoratorMetadata": true,
     "allowJs": true,
+    "module": "CommonJs",
     "outDir": "./out-tsc/spec",
     "types": ["jest", "node"]
   },
-  "files": ["polyfills.ts"],
+  "files": ["src/polyfills.ts"],
   "include": ["**/*.spec.ts", "**/*.d.ts"]
 }

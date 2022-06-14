@@ -1,28 +1,28 @@
-/* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
+import { HttpProxyShortenUrlService } from './../../../services/http-proxy-shorten-url.service';
 import { LinkTableComponent } from './link-table.component';
+import {
+  HttpTestingController,
+  HttpClientTestingModule,
+} from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { HttpClient } from '@angular/common/http';
 
 describe('LinkTableComponent', () => {
-  let component: LinkTableComponent;
-  let fixture: ComponentFixture<LinkTableComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ LinkTableComponent ]
-    })
-    .compileComponents();
-  }));
+  let service: HttpProxyShortenUrlService;
+  let httpMock: HttpTestingController;
+  let httpClient: HttpClient;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LinkTableComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+    });
+    httpMock = TestBed.inject(HttpTestingController);
+    httpClient = TestBed.inject(HttpClient);
+    service = new HttpProxyShortenUrlService(httpClient);
   });
 
   it('should create', () => {
+    const component = new LinkTableComponent(service);
     expect(component).toBeTruthy();
   });
 });
